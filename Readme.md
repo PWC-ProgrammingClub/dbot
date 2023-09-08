@@ -27,7 +27,7 @@ Here's an example .env file.
 TOKEN= private
 
 GUILD_ID=1093204439025864744
-
+VOTE_CHANNEL_ID=1101230689279557661
 CLIENT_ID=1093203377292329020
 
 # ---- Postgres Database Config ---
@@ -40,6 +40,8 @@ PG_PASS=aR3allyC00lA3ndL0ngP2w!
 PG_DB=dbot
 PG_PORT_INTERNAL=5432
 PG_PORT_EXPOSE=5430
+
+DATABASE_URL=postgresql://cabot:aR3allyC00lA3ndL0ngP2w!@localhost:5430/dbot?schema=public
 
 IN_DOCKER=false
 
@@ -58,4 +60,6 @@ TORM_SYNC=true
 - Run `npx prisma migrate` to load the database schema
 - Run `npx prisma generate` to generate the prisma code in `node_modules/.prisma` code
 - Run `npm run dev` to run the dev script with ts-node to start the bot
+- Run `make psql` Open the sql cli
+    - run `\dt` to show tables
 

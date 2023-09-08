@@ -42,6 +42,9 @@ if (!ENV_SET) {
 	);
 } else {
 
+	// Set databse url
+	process.env['DATABASE_URL'] = `postgresql://${process.env["PG_USER"]}:${process.env["PG_PASS"]}@localhost:${process.env["PG_PORT_EXPOSE"]}/${process.env["PG_DB"]}?schema=public`
+
 	// Initialize the discord client
 	const client = InitializeClient({});
 
